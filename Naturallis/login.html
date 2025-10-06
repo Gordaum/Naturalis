@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Naturallis</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-message {
+            color: #dc3545;
+            background-color: #f8d7da;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        
+        .home-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #6aa84f, #38761d);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .home-button:hover {
+            background: linear-gradient(135deg, #38761d, #2d5a16);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="naturallis.jpeg" alt="Logo Naturallis" class="logo-img">
+        <form action="autenticar.php" method="post">
+            <h2>Acesso Verde</h2>
+            <div class="error-message" id="errorMessage">
+                Usuário ou senha incorretos!
+            </div>
+            <div class="input-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <button type="submit">Entrar</button>
+        </form>
+        <div class="register-link">
+            <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+            <p><a href="index.php" class="home-button">🏠 Voltar ao Início</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Mostrar mensagem de erro se necessário
+        const urlParams = new URLSearchParams(window.location.search);
+        const erro = urlParams.get('erro');
+        const errorMessage = document.getElementById('errorMessage');
+        
+        if (erro) {
+            switch (erro) {
+                case '1':
+                    errorMessage.textContent = 'Usuário ou senha incorretos!';
+                    break;
+                case '2':
+                    errorMessage.textContent = 'Por favor, preencha todos os campos!';
+                    break;
+                case '3':
+                    errorMessage.textContent = 'Erro interno do sistema. Tente novamente.';
+                    break;
+                case '4':
+                    errorMessage.textContent = 'Acesso não autorizado! Você precisa ter privilégios de administrador.';
+                    break;
+                default:
+                    errorMessage.textContent = 'Usuário ou senha incorretos!';
+            }
+            errorMessage.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

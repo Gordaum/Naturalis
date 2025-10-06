@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Naturallis</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .home-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #6aa84f, #38761d);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .home-button:hover {
+            background: linear-gradient(135deg, #38761d, #2d5a16);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="naturallis.jpeg" alt="Logo Naturallis" class="logo-img">
+        <form action="register.php" method="post">
+            <h2>Crie sua Conta</h2>
+            
+            <!-- Mensagem de erro/sucesso -->
+            <div id="message-container"></div>
+            
+            <script>
+                // Verificar se há parâmetros na URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const erro = urlParams.get('erro');
+                const sucesso = urlParams.get('sucesso');
+                
+                const messageContainer = document.getElementById('message-container');
+                
+                if (erro) {
+                    messageContainer.innerHTML = `
+                        <div style="background-color: #f8d7da; color: #721c24; padding: 12px; border-radius: 4px; margin-bottom: 15px; border: 1px solid #f5c6cb;">
+                            <i class="fas fa-exclamation-circle"></i> ${decodeURIComponent(erro)}
+                        </div>
+                    `;
+                }
+                
+                if (sucesso) {
+                    messageContainer.innerHTML = `
+                        <div style="background-color: #d4edda; color: #155724; padding: 12px; border-radius: 4px; margin-bottom: 15px; border: 1px solid #c3e6cb;">
+                            <i class="fas fa-check-circle"></i> Cadastro realizado com sucesso! Bem-vindo(a)!
+                        </div>
+                    `;
+                }
+            </script>
+            <div class="input-group">
+                <label for="username">Nome de Usuário</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+             <div class="input-group">
+                <label for="confirm_password">Confirmar Senha</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+            </div>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <div class="register-link">
+            <p>Já tem uma conta? <a href="login.html">Faça login</a></p>
+            <p><a href="index.php" class="home-button">🏠 Voltar ao Início</a></p>
+        </div>
+    </div>
+</body>
+</html>
