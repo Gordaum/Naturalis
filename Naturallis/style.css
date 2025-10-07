@@ -1,0 +1,148 @@
+xampp\htdocs\Noite\style.css
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f8f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;  /* melhor que height: 100vh, cobre a tela toda */
+    margin: 0;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: auto; /* garante centralização extra */
+}
+
+.logo-img {
+    max-width: 180px; /* Aumentei o tamanho da imagem */
+    margin-bottom: 1rem;
+}
+
+h2 {
+    text-align: center;
+    color: #38761d; /* Verde escuro para o título */
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+    text-align: left; /* Alinha os rótulos à esquerda para melhor leitura */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #6aa84f; /* Borda verde ao focar */
+    box-shadow: 0 0 5px rgba(106, 168, 79, 0.5);
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #6aa84f; /* Verde para o botão */
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #38761d; /* Verde mais escuro no hover */
+}
+
+.register-link {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.register-link a {
+    color: #6aa84f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para navegação do index.php */
+.login-icon {
+    position: fixed;
+    top: 20px;
+    background: linear-gradient(135deg, #6aa84f, #38761d);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(106, 168, 79, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.login-icon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(106, 168, 79, 0.4);
+    text-decoration: none;
+    color: white;
+}
+
+.loja-button {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+    z-index: 1000;
+}
+
+.loja-button:hover {
+    background: linear-gradient(135deg, #218838, #17a2b8);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(40, 167, 69, 0.4);
+}
+
+.admin-button {
+    background: linear-gradient(135deg, #dc3545, #fd7e14);
+    color: white;
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+    z-index: 1001;
+}
+
+.admin-button:hover {
+    background: linear-gradient(135deg, #c82333, #e0650e);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(220, 53, 69, 0.4);
+    z-index: 1001;
+}
+
+.user-logged {
+    background: linear-gradient(135deg, #17a2b8, #007bff);
+    z-index: 1000;
+}
